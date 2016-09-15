@@ -1,0 +1,17 @@
+//
+//  airlogic-Prefix.pch
+//  airlogic
+//
+//  Created by abhishek on 12/03/2016.
+//  Copyright © 2016 airlogic. All rights reserved.
+//
+#import "GAI.h"
+#import "GAIFields.h"
+
+#ifndef airlogic_Prefix_pch
+#define airlogic_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* airlogic_Prefix_pch */

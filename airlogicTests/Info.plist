@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>au.com.itcompany</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Roboto-Black_0.ttf</string>
+		<string>Roboto-BlackItalic_0.ttf</string>
+		<string>Roboto-Bold_0.ttf</string>
+		<string>Roboto-BoldCondensed.ttf</string>
+		<string>Roboto-BoldCondensedItlaic.ttf</string>
+		<string>Roboto-Condensed.ttf</string>
+		<string>Roboto-Italic_0.ttf</string>
+		<string>Roboto-Light_0.ttf</string>
+		<string>Roboto-LightItalic_0.ttf</string>
+		<string>Roboto-Medium_0.ttf</string>
+		<string>Roboto-MediumItalic_0.ttf</string>
+		<string>Roboto-Regular_0.ttf</string>
+		<string>Roboto-Thin_0.ttf</string>
+		<string>Roboto-ThinItalic_0.ttf</string>
+		<string>RobotCondensed-Bold_0.ttf</string>
+		<string>RobotoCondensed-BoldItalic_0.ttf</string>
+		<string>RobotoCondensed-Italic_0.ttf</string>
+		<string>RobotoCondensed-Light_0.ttf</string>
+		<string>RobotoCondensed-LightItalic_0.ttf</string>
+		<string>RobotoCondensed-Regular.ttf</string>
+	</array>
+</dict>
+</plist>
