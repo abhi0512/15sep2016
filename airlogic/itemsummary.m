@@ -78,7 +78,7 @@ int dis;
     [scrlview addSubview:profileview];
     
     NSMutableArray *arr = [DbHandler Fetchuserdetail:delegate.struserid];
-    NSString *thumbprofilepic =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arr objectAtIndex:0]valueForKey:@"thumbprofilepic"]];
+    NSString *thumbprofilepic =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arr objectAtIndex:0]valueForKey:@"thumbprofilepic"]];
     
     NSURL *Imgurl=[NSURL URLWithString:thumbprofilepic];
     if(thumbprofilepic.length != 0 )

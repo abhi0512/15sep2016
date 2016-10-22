@@ -99,7 +99,7 @@ int cathght=65;
     NSString *thumbprofilepic= [userdata valueForKey:@"thumbprofilepic"];
     if(thumbprofilepic.length != 0  ||  ![thumbprofilepic isEqual: [NSNull null]])
     {
-        NSString *img =[NSString stringWithFormat:@"http://airlogiq.com/%@",thumbprofilepic];
+        NSString *img =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",thumbprofilepic];
         
         [imgview setImageWithURL:[NSURL URLWithString:img] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     }
@@ -819,7 +819,7 @@ int cathght=65;
     cell.lblcat.text= [NSString stringWithFormat:@"%@",[[arrcategory objectAtIndex:indexPath.row]valueForKey:@"name"]];
     cat=[[arrcategory objectAtIndex:indexPath.row]valueForKey:@"name"];
     catid=[[arrcategory objectAtIndex:indexPath.row]valueForKey:@"id"];
-    NSString *catimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"icon"]];
+    NSString *catimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"icon"]];
     NSString *rndstring = [AppDelegate randomStringWithLength:5];
     catimg= [catimg stringByAppendingString:@"?str="];
     catimg= [catimg stringByAppendingString:rndstring];

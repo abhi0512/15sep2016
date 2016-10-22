@@ -43,14 +43,8 @@
 {
     
     [super viewWillAppear:animated];
-//    overlayView = [UIButton buttonWithType:UIButtonTypeCustom];
-//    overlayView.frame = self.revealViewController.frontViewController.view.bounds;
-//    overlayView.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.8];
-//    overlayView.tag = 999;
-//    [overlayView addTarget:self.revealViewController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside];
-//    [overlayView addTarget:self.revealViewController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchDragOutside];
-//    [self.revealViewController.frontViewController.view addSubview:overlayView];
-//    
+
+
     delegate=(AppDelegate *) [[UIApplication sharedApplication] delegate];
     imgprofile.layer.cornerRadius= imgprofile.frame.size.width/2;
     imgprofile.clipsToBounds=YES;
@@ -65,24 +59,14 @@
     lblusermode.text=[NSString stringWithFormat:@"In %@ Mode",delegate.strusertype];
      [btnusername setTitle:@"" forState:UIControlStateNormal];
     [btnusername setTitle:[NSString stringWithFormat:@"Hello, %@",[[arr objectAtIndex:0]valueForKey:@"firstname"]] forState:UIControlStateNormal];
-    
-    NSString *mystr=[[arr objectAtIndex:0]valueForKey:@"thumbprofilepic"];
-    mystr=[mystr substringToIndex:5];
+   
     NSString *thumbprofilepic =@"";
-    thumbprofilepic =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arr objectAtIndex:0]valueForKey:@"thumbprofilepic"]];
-    
-//    NSLog(@"%@",mystr);
-//    if(![mystr isEqualToString:@"https"])
-//    {
-//    thumbprofilepic =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arr objectAtIndex:0]valueForKey:@"thumbprofilepic"]];
-//    }
-//    else
-//    {
-//         thumbprofilepic=[[arr objectAtIndex:0]valueForKey:@"thumbprofilepic"];
-//    }
-    NSURL *Imgurl=[NSURL URLWithString:thumbprofilepic];
+     thumbprofilepic =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arr objectAtIndex:0]valueForKey:@"thumbprofilepic"]];
     if(thumbprofilepic.length != 0 )
     {
+        
+        NSURL *Imgurl=[NSURL URLWithString:thumbprofilepic];
+        
         [imgprofile setImageWithURL:Imgurl placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         imgprofile.layer.borderColor = [[UIColor orangeColor] CGColor];
         imgprofile.layer.borderWidth = 2.0;

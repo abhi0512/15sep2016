@@ -439,6 +439,10 @@ NSString *iletters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234
             {
               pcode=delegate.promocode;
             }
+            else
+            {
+                pcode=[userdata valueForKey:@"promocode"];
+            }
             
             
             BOOL flg = [DbHandler Insertuser:@"" city:@"" country:@"" emailid:delegate. fbemail firstname:delegate.fbfname gender:@"" uid:userid lastname:delegate.fblname phone:[userdata valueForKey:@"phone"] profilepic:@"" state:@"" status:@"" thumbprofilepic:[userdata valueForKey:@"thumbprofilepic"] usertype:@"Sender" zip:@"" push:@"1" sound:@"1" promocode:pcode];
@@ -654,7 +658,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     NSString *tripdate =[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"tripdate"];
     NSArray *dates = [tripdate componentsSeparatedByString:@"/"];
     
-    NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+    NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
     homecell.lbldate.text=[dates objectAtIndex:0];
     homecell.lblmonth.text=[NSString stringWithFormat:@"%@ %@",[dates objectAtIndex:1],[dates objectAtIndex:2]];
    
@@ -725,7 +729,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
         }
        NSString *tripdate =[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"tripdate"];
-       NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+       NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
         flybeecell.lbldate.text=[NSString stringWithFormat:@"%@",[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"fromdate"]];
         flybeecell.lbltodate.text=[NSString stringWithFormat:@"%@",[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"todate"]];
         [flybeecell.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];

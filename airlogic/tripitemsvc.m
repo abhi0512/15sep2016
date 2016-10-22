@@ -346,8 +346,11 @@ double afee;
                 
                 if([delegate isConnectedToNetwork])
                 {
+                    if([isopened isEqualToString:@"N"])
+                    {
                     [self addProgressIndicator];
                     reviewconn=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+                    }
                 }
                 else
                 {
@@ -384,6 +387,7 @@ double afee;
                 rate.itemid=itemid;
                 rate.torateuserid=itemuserid;
                 rate.tripid=tripid;
+                isopened=@"Y";
                 CATransition *transition = [CATransition animation];
                 transition.duration = 0.45;
                 transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
@@ -428,7 +432,10 @@ double afee;
                 }
 
             }
+            if(![status isEqualToString:@"DeliverItems"])
+            {
             [self loaddata];
+            }
         }
         else
         {
@@ -449,6 +456,8 @@ double afee;
             
             if([cnt isEqualToString:@"0"])
             {
+                if(![isopened isEqualToString:@"Y"])
+                {
                 rateuser *rate= [[rateuser alloc]initWithNibName:@"rateuser" bundle:nil];
                 rate.itemid=[[arritem objectAtIndex:0]valueForKey:@"itemid"];;
                 rate.torateuserid=[[arritem objectAtIndex:0]valueForKey:@"touserid"];
@@ -460,9 +469,12 @@ double afee;
                 [transition setType:kCATransitionPush];
                 transition.subtype = kCATransitionFromRight;
                 transition.delegate = self;
+                isopened=@"N";
                 [self.navigationController.view.layer addAnimation:transition forKey:nil];
                 [self.navigationController pushViewController:rate animated:NO];
                 return;
+                }
+                
             }
             
         }
@@ -680,7 +692,7 @@ double afee;
             _imgprofile.layer.cornerRadius= _imgprofile.frame.size.width/2;
             _imgprofile.clipsToBounds=YES;
     
-            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arritem objectAtIndex:0]valueForKey:@"profilepic"]];
+            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arritem objectAtIndex:0]valueForKey:@"profilepic"]];
     
             [_imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             _imgprofile.layer.borderColor = [[UIColor orangeColor] CGColor];
@@ -1364,6 +1376,8 @@ double afee;
     itemuserid=@"";
     isfund=@"";
     btnindex=0;
+    viewdetail.hidden=YES;
+    
 }
 
 /*

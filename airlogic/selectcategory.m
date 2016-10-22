@@ -143,7 +143,7 @@
     
     cell.lbldesc.text=[NSString stringWithFormat:@"%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"description"]];
     cell.lblcat.text= [NSString stringWithFormat:@"%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"name"]];
-    NSString *catimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"icon"]];
+    NSString *catimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"icon"]];
     NSURL *Imgurl=[NSURL URLWithString:catimg];
     [cell.imgcat  sd_setImageWithURL:Imgurl placeholderImage:[UIImage imageNamed:@"nophoto.png"]];
     

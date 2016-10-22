@@ -349,7 +349,7 @@ int bindex=0;
             rcell.imgprofile.layer.cornerRadius= rcell.imgprofile.frame.size.width/2;
             rcell.imgprofile.clipsToBounds=YES;
             rcell.lbldate.text=[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"requestdate"];
-            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
             
             [rcell.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
                 
@@ -399,7 +399,7 @@ int bindex=0;
                 rcell1.txtmesage.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
             rcell1.imgprofile.layer.cornerRadius= rcell1.imgprofile.frame.size.width/2;
             rcell1.imgprofile.clipsToBounds=YES;
-             NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+             NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
             rcell1.lbldate.text=[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"requestdate"];
             [rcell1.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
                 
@@ -458,7 +458,7 @@ int bindex=0;
                 rcell2.txtmesage.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
             rcell2.imgprofile.layer.cornerRadius= rcell2.imgprofile.frame.size.width/2;
             rcell2.imgprofile.clipsToBounds=YES;
-            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
                 
             
             [rcell2.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -509,7 +509,7 @@ int bindex=0;
                  rcell3.txtmesage.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
             rcell3.imgprofile.layer.cornerRadius= rcell3.imgprofile.frame.size.width/2;
             rcell3.imgprofile.clipsToBounds=YES;
-            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
             
             [rcell3.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
                 

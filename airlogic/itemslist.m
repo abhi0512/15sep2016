@@ -313,7 +313,7 @@ int btindex=0;
              _imgprofile.layer.cornerRadius=  _imgprofile.frame.size.width/2;
              _imgprofile.clipsToBounds=YES;
     
-            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arritem objectAtIndex:0]valueForKey:@"profilepic"]];
+            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arritem objectAtIndex:0]valueForKey:@"profilepic"]];
     
             [ _imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     

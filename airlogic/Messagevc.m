@@ -464,7 +464,7 @@ int msgpageindex=1;
     }
     
     
-    NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrdata objectAtIndex:indexPath.row]valueForKey:@"frompic"]];
+    NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrdata objectAtIndex:indexPath.row]valueForKey:@"frompic"]];
     
     //ccell.avatarImageView.image = [UIImage imageNamed:@"person2"];
     

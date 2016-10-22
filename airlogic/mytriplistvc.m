@@ -442,7 +442,7 @@
             acell.lbldate.text=[dates objectAtIndex:0];
             acell.lblmonth.text=[NSString stringWithFormat:@"%@ %@",[dates objectAtIndex:1],[dates objectAtIndex:2]];
             
-        NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arractivetrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+        NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arractivetrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
        
     [acell.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 
@@ -525,7 +525,7 @@
             }
             
         
-        NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrpendingtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+        NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrpendingtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
         
         [pcell.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             pcell.imgprofile.layer.cornerRadius= pcell.imgprofile.frame.size.width/2;
@@ -599,7 +599,7 @@
             excell.lbldate.text=[dates objectAtIndex:0];
             excell.lblmonth.text=[NSString stringWithFormat:@"%@ %@",[dates objectAtIndex:1],[dates objectAtIndex:2]];
         
-        NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrexpiredtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+        NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrexpiredtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
         
         [excell.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         excell.imgprofile.layer.cornerRadius= excell.imgprofile.frame.size.width/2;
@@ -678,7 +678,7 @@
             cocell.lbldate.text=[dates objectAtIndex:0];
             cocell.lblmonth.text=[NSString stringWithFormat:@"%@ %@",[dates objectAtIndex:1],[dates objectAtIndex:2]];
             
-        NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrcompleted objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+        NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrcompleted objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
         
         [cocell.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
        
@@ -749,7 +749,7 @@
             cocell.lbldate.text=[dates objectAtIndex:0];
             cocell.lblmonth.text=[NSString stringWithFormat:@"%@ %@",[dates objectAtIndex:1],[dates objectAtIndex:2]];
             
-            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrcanceled objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrcanceled objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
             
             [cocell.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             

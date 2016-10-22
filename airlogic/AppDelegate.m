@@ -34,7 +34,9 @@ static NSString *const kAllowTracking = @"allowTracking";
 @interface AppDelegate ()
 
 @end
-#define webhost @"http://airlogiq.com/webservices/"
+#define webhost1 @"http://airlogiq.com/webservices/"
+
+#define webhost @"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/webservices/"
 
 @implementation AppDelegate
 @synthesize viewController=_viewController;

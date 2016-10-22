@@ -20,6 +20,9 @@
 #import "SCLAlertView.h"
 #import "itemslist.h"
 #import "itemsrd.h"
+#import "viewprofile.h"
+#import "profilevc.h"
+
 
 
 @interface myitemvc ()
@@ -481,7 +484,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             acell.lblitemprice.hidden=YES;
             
             
-            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arractiveitem objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arractiveitem objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
             
             [acell.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             
@@ -570,7 +573,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             }
             
             
-            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrpendingitem objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrpendingitem objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
             
             [pcell.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             pcell.imgprofile.layer.cornerRadius= pcell.imgprofile.frame.size.width/2;
@@ -654,7 +657,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                 excell.lblitemprice.text=@"0";
             }
             
-            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrexpireditem objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrexpireditem objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
             
             [excell.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             excell.imgprofile.layer.cornerRadius= excell.imgprofile.frame.size.width/2;
@@ -758,9 +761,17 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             cocell.lblcur2.hidden=YES;
             cocell.lblitemprice.hidden=YES;
             
-            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrcompleted objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrcompleted objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
             
             [cocell.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            
+//            
+//            UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgclick:)];
+//            singleTap.numberOfTapsRequired = 1;
+//            [cocell.imgprofile setUserInteractionEnabled:YES];
+//            [cocell.imgprofile addGestureRecognizer:singleTap];
+//            cocell.imgprofile.tag = indexPath.row;
+//            
             
             cocell.imgprofile.layer.cornerRadius= cocell.imgprofile.frame.size.width/2;
             cocell.imgprofile.clipsToBounds=YES;
@@ -842,7 +853,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                 cacell.lblitemprice.text=@"0";
             }
             
-            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrcanceled objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrcanceled objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
             
             [cacell.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             
@@ -976,7 +987,24 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
-
+//-(void)imgclick :(id) sender
+//{
+//    UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
+//    int index =gesture.view.tag;
+//    // NSLog(@"%@", [arrtrip objectAtIndex:index]);
+//    CATransition *transition = [CATransition animation];
+//    transition.duration = 0.45;
+//    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+//    transition.type = kCATransitionFromRight;
+//    [transition setType:kCATransitionPush];
+//    transition.subtype = kCATransitionFromRight;
+//    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+//    
+//    viewprofile *profile= [[viewprofile alloc]initWithNibName:@"viewprofile" bundle:nil];
+//    profile.userid=[[arrcompleted objectAtIndex:index]valueForKey:@"userid"];
+//    [self.navigationController pushViewController:profile animated:NO];
+//    
+//}
 #pragma mark - Indicator
 -(void)addProgressIndicator
 {

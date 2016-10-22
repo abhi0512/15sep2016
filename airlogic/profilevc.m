@@ -391,7 +391,7 @@
          
         NSString *img=@"";
         NSString *logintype=[userdetail valueForKey:@"logintype"];
-        img =[NSString stringWithFormat:@"http://airlogiq.com/%@",thumbprofilepic];
+        img =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",thumbprofilepic];
          
 //         
 //         if(![logintype isEqualToString:@"Facebook"])

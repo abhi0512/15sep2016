@@ -218,7 +218,7 @@ int bin=0;
     NSString *thumbprofilepic= [userdata valueForKey:@"thumbprofilepic"];
     if(thumbprofilepic.length != 0  ||  ![thumbprofilepic isEqual: [NSNull null]])
     {
-        NSString *img =[NSString stringWithFormat:@"http://airlogiq.com/%@",thumbprofilepic];
+        NSString *img =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",thumbprofilepic];
         
         [imgview setImageWithURL:[NSURL URLWithString:img] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     }
@@ -656,7 +656,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         catcell.lbldesc.text= [NSString stringWithFormat:@"%@",[[arrcategory objectAtIndex:indexPath.row]valueForKey:@"description"]];
         catcell.lblcat.text= [NSString stringWithFormat:@"%@",[[arrcategory objectAtIndex:indexPath.row]valueForKey:@"name"]];
         cat=[[arrcategory objectAtIndex:indexPath.row]valueForKey:@"name"];
-        NSString *catimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"icon"]];
+        NSString *catimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"icon"]];
         NSString *rndstring = [AppDelegate randomStringWithLength:5];
         catimg= [catimg stringByAppendingString:@"?str="];
         catimg= [catimg stringByAppendingString:rndstring];
@@ -693,7 +693,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                 rcell1.imgprofile.layer.borderColor = [[UIColor orangeColor] CGColor];
                 rcell1.imgprofile.layer.borderWidth = 2.0;
                 
-                NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+                NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
                 
                 NSString *tripdate1 =[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"requestdate"];
                 NSArray *dates = [tripdate1 componentsSeparatedByString:@"/"];
@@ -797,7 +797,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                 rcell3.imgprofile.layer.borderColor = [[UIColor orangeColor] CGColor];
                 rcell3.imgprofile.layer.borderWidth = 2.0;
                 
-                NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+                NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
                 
                 [rcell3.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
                 

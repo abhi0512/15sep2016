@@ -213,7 +213,7 @@ int binx=0;
     }
     
     NSString *thumbprofilepic= [userdata valueForKey:@"thumbprofilepic"];
-    NSString *img =[NSString stringWithFormat:@"http://airlogiq.com/%@",thumbprofilepic];
+    NSString *img =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",thumbprofilepic];
     
     [imgview setImageWithURL:[NSURL URLWithString:img] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
@@ -680,7 +680,7 @@ int binx=0;
     catcell.lbldesc.text= [NSString stringWithFormat:@"%@",[[arrcategory objectAtIndex:indexPath.row]valueForKey:@"description"]];
     catcell.lblcat.text= [NSString stringWithFormat:@"%@",[[arrcategory objectAtIndex:indexPath.row]valueForKey:@"name"]];
     cat=[[arrcategory objectAtIndex:indexPath.row]valueForKey:@"name"];
-    NSString *catimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"icon"]];
+    NSString *catimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"icon"]];
     NSString *rndstring = [AppDelegate randomStringWithLength:5];
     catimg= [catimg stringByAppendingString:@"?str="];
     catimg= [catimg stringByAppendingString:rndstring];
@@ -747,7 +747,7 @@ int binx=0;
                   rcell.lbldate.text=[dates objectAtIndex:0];
                   rcell.lblmonth.text=[NSString stringWithFormat:@"%@ %@",[dates objectAtIndex:1],[dates objectAtIndex:2]];
                   
-                  NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+                  NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
                   
                   NSString *st=[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"status"];
                   rcell.lblstatus.text=st;
@@ -847,7 +847,7 @@ int binx=0;
                   rcell2.imgprofile.layer.borderColor = [[UIColor orangeColor] CGColor];
                   rcell2.imgprofile.layer.borderWidth = 2.0;
                   
-                  NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+                  NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrtrip objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
                   [rcell2.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
                   
                   rcell2.imgprofile.userInteractionEnabled = YES;

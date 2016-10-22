@@ -19,7 +19,7 @@
     NSURLConnection *catconn,*statusconn,*fundconn,*pmtconn,*delconn,*reviewconn,*connpurchase,*connpoint,*connredeem;
     NSMutableArray *arritem;
     NSString *status,*itemid;
-    NSString *itemuserid,*tripid,*isfund,*payid,*isfirst;
+    NSString *itemuserid,*tripid,*isfund,*payid,*isfirst,*isopened;
     BOOL showview;
     IBOutlet UIView *viewdetail,*viewstatus,*viewcredit;
     

@@ -457,7 +457,7 @@ int cheight=50;
     }
     cell.lblcat.text= [NSString stringWithFormat:@"%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"name"]];
     cell.lbldesc.text= [NSString stringWithFormat:@"%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"description"]];
-    NSString *catimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"icon"]];
+    NSString *catimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"icon"]];
    [cell.imgcat setImageWithURL:[NSURL URLWithString:catimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
     return cell;

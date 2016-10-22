@@ -33,7 +33,7 @@
 
     NSString *imgpath= @"";
 
-    imgpath=[imgpath stringByAppendingString:@"http://airlogiq.com/temp/uploadids/"];
+    imgpath=[imgpath stringByAppendingString:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/temp/uploadids/"];
     imgpath=[imgpath stringByAppendingString:strurl];
     picture.contentMode = UIViewContentModeScaleAspectFit;
 

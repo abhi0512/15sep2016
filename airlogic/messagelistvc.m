@@ -201,7 +201,7 @@
                     rcell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
                 }
                 
-                NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrmessage objectAtIndex:[indexPath row]]valueForKey:@"tpicture"]];
+                NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrmessage objectAtIndex:[indexPath row]]valueForKey:@"tpicture"]];
                 rcell.lblname.text=[[arrmessage objectAtIndex:[indexPath row]]valueForKey:@"requestid"];
                 rcell.lblitemuser.text=[NSString stringWithFormat:@"%@ %@",[[arrmessage objectAtIndex:[indexPath row]]valueForKey:@"itemuserfname"],[[arrmessage objectAtIndex:[indexPath row]]valueForKey:@"itemuserlname"]];
                 
@@ -248,7 +248,7 @@
                 
                 rcell1.imgprofile.layer.cornerRadius= rcell1.imgprofile.frame.size.width/2;
                 rcell1.imgprofile.clipsToBounds=YES;
-                NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrmessage objectAtIndex:[indexPath row]]valueForKey:@"ipicture"]];
+                NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrmessage objectAtIndex:[indexPath row]]valueForKey:@"ipicture"]];
                  [rcell1.imgprofile setImageWithURL:[NSURL URLWithString:profileimg] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
                 rcell1.imgprofile.layer.borderColor = [[UIColor orangeColor] CGColor];
                 rcell1.imgprofile.layer.borderWidth = 2.0;
@@ -309,7 +309,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     {
     msg.itemid=[[arrmessage objectAtIndex:indexPath.row]valueForKey:@"itemid"];
     msg.tripid=[[arrmessage objectAtIndex:indexPath.row]valueForKey:@"tripid"];
-    msg.touserid=[[arrmessage objectAtIndex:indexPath.row]valueForKey:@"itemuserid"];
+    msg.touserid=[[arrmessage objectAtIndex:indexPath.row]valueForKey:@"tripuserid"];
     msg.msgstatus=[[arrmessage objectAtIndex:indexPath.row]valueForKey:@"currentstatus"];
     }
     else

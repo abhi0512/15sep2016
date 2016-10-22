@@ -851,7 +851,7 @@
         strstateid= [DbHandler GetId: [NSString stringWithFormat:@"select state_id from statemaster where state_name='%@'",txtstate.text]];
         arrcity= [DbHandler FetchCity:strstateid];
         }
-                NSString *img =[NSString stringWithFormat:@"http://airlogiq.com/%@",thumbprofilepic];
+                NSString *img =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",thumbprofilepic];
                 
                 [imgprofile setImageWithURL:[NSURL URLWithString:img] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         

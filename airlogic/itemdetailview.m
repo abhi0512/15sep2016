@@ -90,7 +90,7 @@ int chght=65;
     }
     
     NSString *thumbprofilepic= [userdata valueForKey:@"thumbprofilepic"];
-        NSString *img =[NSString stringWithFormat:@"http://airlogiq.com/%@",thumbprofilepic];
+        NSString *img =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",thumbprofilepic];
         
     [imgview setImageWithURL:[NSURL URLWithString:img] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
@@ -737,7 +737,7 @@ int chght=65;
     cell.lbldesc.text= [NSString stringWithFormat:@"%@",[[arrcategory objectAtIndex:indexPath.row]valueForKey:@"description"]];
     cell.lblcat.text= [NSString stringWithFormat:@"%@",[[arrcategory objectAtIndex:indexPath.row]valueForKey:@"name"]];
     cat=[[arrcategory objectAtIndex:indexPath.row]valueForKey:@"name"];
-    NSString *catimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"icon"]];
+    NSString *catimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrcategory objectAtIndex:[indexPath row]]valueForKey:@"icon"]];
     NSString *rndstring = [AppDelegate randomStringWithLength:5];
     catimg= [catimg stringByAppendingString:@"?str="];
     catimg= [catimg stringByAppendingString:rndstring];

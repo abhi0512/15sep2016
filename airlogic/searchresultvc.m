@@ -352,7 +352,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             NSString *tripdate =[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"tripdate"];
             NSArray *dates = [tripdate componentsSeparatedByString:@"/"];
             
-            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
             homecell.lbldate.text=[dates objectAtIndex:0];
             homecell.lblmonth.text=[NSString stringWithFormat:@"%@ %@",[dates objectAtIndex:1],[dates objectAtIndex:2]];
             
@@ -421,7 +421,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                 flybeecell.lblitemprice.frame=CGRectMake(260, -6, 35, 77);
             }
             //NSString *tripdate =[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"tripdate"];
-            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq.com/%@",[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
+            NSString *profileimg =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"thumbprofilepic"]];
             flybeecell.lbldate.text=[NSString stringWithFormat:@"%@",[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"fromdate"]];
             flybeecell.lbltodate.text=[NSString stringWithFormat:@"%@",[[arrdata objectAtIndex:[indexPath row]]valueForKey:@"todate"]];
             

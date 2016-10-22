@@ -265,12 +265,10 @@
             NSArray *dates = [tripdt componentsSeparatedByString:@"/"];
             flbldate.text=[dates objectAtIndex:0];
             lblmonth.text=[NSString stringWithFormat:@"%@ %@",[dates objectAtIndex:1],[dates objectAtIndex:2]];
-            
-            NSString *mystr=[userdata valueForKey:@"thumbprofilepic"];
-            mystr=[mystr substringToIndex:5];
+           
             NSString *thumbprofilepic =@"";
             NSString *img =@"";
-            img =[NSString stringWithFormat:@"http://airlogiq.com/%@",thumbprofilepic];
+            img =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",thumbprofilepic];
             
 //            NSLog(@"%@",mystr);
 //            if(![mystr isEqualToString:@"https"])
@@ -363,7 +361,7 @@
             lbldate.text=fdate;
             lbltodate.text=tdate;
             NSString *thumbprofilepic= [userdata valueForKey:@"thumbprofilepic"];
-            NSString *img =[NSString stringWithFormat:@"http://airlogiq.com/%@",thumbprofilepic];
+            NSString *img =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",thumbprofilepic];
             [imgprofile setImageWithURL:[NSURL URLWithString:img] placeholderImage:[UIImage imageNamed:@"nophoto.png"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             imgprofile.layer.cornerRadius= imgprofile.frame.size.width/2;
             imgprofile.clipsToBounds=YES;
