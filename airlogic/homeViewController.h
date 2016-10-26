@@ -10,10 +10,11 @@
 #import "SWRevealViewController.h"
 #import "L3SDKLazyTableView.h"
 #import "GAITrackedViewController.h"
+#import "currency.h"
 
 @class MBProgressHUD;
 @class AppDelegate;
-@interface homeViewController : GAITrackedViewController<SWRevealViewControllerDelegate,UITableViewDataSource,UITableViewDelegate,L3SDKLazyTableViewDelegate>
+@interface homeViewController : GAITrackedViewController<SWRevealViewControllerDelegate,UITableViewDataSource,UITableViewDelegate,L3SDKLazyTableViewDelegate,currencyAccountDelegate>
 {
    SWRevealViewController *revealController;
     MBProgressHUD *progresshud;

@@ -187,7 +187,7 @@
     [postdata setObject:delegate.fblname forKey:@"lastname"];
     [postdata setObject:delegate.fbemail forKey:@"email"];
     [postdata setObject:delegate.fbid forKey:@"logintoken"];
-    [postdata setObject:@"" forKey:@"fbpicture"];
+    [postdata setObject:delegate.fbpicture        forKey:@"fbpicture"];
     [postdata setObject:delegate.devicetoken forKey:@"devicetoken"];
     
     
@@ -239,7 +239,7 @@
             
             [DbHandler deleteDatafromtable:@"delete from usermaster"];
             
-            BOOL flg = [DbHandler Insertuser:@"" city:@"" country:@"" emailid:delegate. fbemail firstname:delegate.fbfname gender:@"" uid:userid lastname:delegate.fblname phone:@"" profilepic:@"" state:@"" status:@"" thumbprofilepic:[userdata valueForKey:@"thumbprofilepic"] usertype:@"Sender" zip:@"" push:@"1" sound:@"1" promocode:@""];
+            BOOL flg = [DbHandler Insertuser:@"" city:@"" country:@"" emailid:delegate. fbemail firstname:delegate.fbfname gender:@"" uid:userid lastname:delegate.fblname phone:@"" profilepic:@"" state:@"" status:@"" thumbprofilepic:[userdata valueForKey:@"thumbprofilepic"] usertype:@"Sender" zip:@"" push:@"1" sound:@"1" promocode:[userdata valueForKey:@"promocode"] currency:[userdata valueForKey:@"currency"]];
             
             if(flg)
             {

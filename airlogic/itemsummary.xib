@@ -46,6 +46,11 @@
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
         </mutableArray>
         <mutableArray key="arial-narrow_[allfont.net].ttf">
             <string>ArialNarrow</string>
@@ -56,6 +61,11 @@
             <connections>
                 <outlet property="btnapply" destination="aWZ-zc-lQU" id="eG3-YE-rdM"/>
                 <outlet property="btncancel" destination="m3I-RY-owy" id="aDC-0U-42n"/>
+                <outlet property="btnchk1" destination="TSJ-SP-Oba" id="Uz5-Bb-A6P"/>
+                <outlet property="btnchk2" destination="zgy-m2-a71" id="GqE-6u-glG"/>
+                <outlet property="btnchk3" destination="rwU-Dt-Thw" id="fDd-5g-nnu"/>
+                <outlet property="btnchk4" destination="aku-RD-WBp" id="TSb-X2-hJr"/>
+                <outlet property="btnchk5" destination="xiJ-78-vdg" id="0QT-7h-jK1"/>
                 <outlet property="btnnext" destination="u1T-t7-t66" id="2oW-CW-T1u"/>
                 <outlet property="imgicon" destination="T6Y-y0-cTC" id="dlv-Zn-QWm"/>
                 <outlet property="imgprofile" destination="eEw-7E-tjC" id="zps-Gm-iqP"/>
@@ -84,12 +94,13 @@
                 <outlet property="txtpromocode" destination="8YL-0C-E0S" id="ivz-Xn-fxF"/>
                 <outlet property="view" destination="BDU-by-qMq" id="GDz-tg-BmO"/>
                 <outlet property="viewpromo" destination="CMQ-ac-HTx" id="hhM-It-4Uo"/>
-                <outlet property="viewsummary" destination="xE2-fY-SfS" id="ORF-Qi-2fs"/>
+                <outlet property="viewsummary" destination="xE2-fY-SfS" id="1MA-px-F4M"/>
+                <outlet property="viewterms" destination="QO4-PV-PbT" id="X6E-t5-Tbu"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="750"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="950"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary Of Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wBY-kJ-h7j">
@@ -109,7 +120,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="u1T-t7-t66">
-                    <rect key="frame" x="51" y="660" width="218" height="34"/>
+                    <rect key="frame" x="51" y="862" width="218" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
@@ -490,7 +501,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="m3I-RY-owy">
-                    <rect key="frame" x="51" y="700" width="218" height="34"/>
+                    <rect key="frame" x="51" y="902" width="218" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
@@ -506,12 +517,85 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                     <animations/>
                 </imageView>
+                <view contentMode="scaleToFill" id="QO4-PV-PbT">
+                    <rect key="frame" x="0.0" y="640" width="320" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TSJ-SP-Oba">
+                            <rect key="frame" x="8" y="10" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KuC-xr-VvG">
+                            <rect key="frame" x="32" y="3" width="280" height="40"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <string key="text">User is not sending/receving the goods for acommercial purpose.</string>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zgy-m2-a71">
+                            <rect key="frame" x="8" y="52" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please use the messaging menu for any communication." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xA7-TO-M8V">
+                            <rect key="frame" x="32" y="42" width="280" height="40"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rwU-Dt-Thw">
+                            <rect key="frame" x="8" y="90" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is sender responsibility to verify the legality of the item to be sent." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="83U-1O-OCo">
+                            <rect key="frame" x="32" y="80" width="280" height="40"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aku-RD-WBp">
+                            <rect key="frame" x="8" y="127" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Flybee reserve the right to verify the content and legality of the product." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1P5-Ku-I5l">
+                            <rect key="frame" x="32" y="117" width="280" height="40"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xiJ-78-vdg">
+                            <rect key="frame" x="8" y="165" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We reserve the right to share with legal authorities if needed." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Unz-bd-MUD">
+                            <rect key="frame" x="32" y="155" width="280" height="40"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <animations/>
+                </view>
             </subviews>
             <animations/>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="321" y="315.5"/>
+            <point key="canvasLocation" x="321" y="315"/>
         </view>
         <view contentMode="scaleToFill" id="BDU-by-qMq">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>

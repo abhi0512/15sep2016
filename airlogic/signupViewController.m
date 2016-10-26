@@ -226,7 +226,7 @@
         
         NSDictionary *userdata = [deserializedData objectForKey:@"data"];
         NSString *userid =[userdata valueForKey:@"lastid"];
-        BOOL flg = [DbHandler Insertuser:@"" city:@"" country:@"" emailid:txtemail.text firstname:txtfname.text gender:@"" uid:userid lastname:txtlname.text phone:@"" profilepic:@"" state:@"" status:@"" thumbprofilepic:@"" usertype:@"Sender" zip:@"" push:@"1" sound:@"1" promocode:@""];
+        BOOL flg = [DbHandler Insertuser:@"" city:@"" country:@"" emailid:txtemail.text firstname:txtfname.text gender:@"" uid:userid lastname:txtlname.text phone:@"" profilepic:@"" state:@"" status:@"" thumbprofilepic:@"" usertype:@"Sender" zip:@"" push:@"1" sound:@"1" promocode:@"" currency:@""];
         
         if(flg)
         {

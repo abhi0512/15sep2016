@@ -73,9 +73,48 @@ int dis;
 -(void)showsummary
 {
     scrlview.userInteractionEnabled = YES;
-    scrlview.contentSize=CGSizeMake(self.view.frame.size.width,800);
-    profileview.frame=CGRectMake(0, 0, self.view.frame.size.width,750);
-    [scrlview addSubview:profileview];
+    
+    [btnchk1 setBackgroundImage:[UIImage imageNamed:@"tickwithoutcircle"]
+                        forState:UIControlStateNormal];
+    [btnchk1 setBackgroundImage:[UIImage imageNamed:@"tickcircle"]
+                        forState:UIControlStateSelected];
+    [btnchk1 setBackgroundImage:[UIImage imageNamed:@"tickcircle"]
+                        forState:UIControlStateHighlighted];
+    [btnchk1 addTarget:self action:@selector(checkbox1Selected:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [btnchk2 setBackgroundImage:[UIImage imageNamed:@"tickwithoutcircle"]
+                       forState:UIControlStateNormal];
+    [btnchk2 setBackgroundImage:[UIImage imageNamed:@"tickcircle"]
+                       forState:UIControlStateSelected];
+    [btnchk2 setBackgroundImage:[UIImage imageNamed:@"tickcircle"]
+                       forState:UIControlStateHighlighted];
+    [btnchk2 addTarget:self action:@selector(checkbox2Selected:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [btnchk3 setBackgroundImage:[UIImage imageNamed:@"tickwithoutcircle"]
+                       forState:UIControlStateNormal];
+    [btnchk3 setBackgroundImage:[UIImage imageNamed:@"tickcircle"]
+                       forState:UIControlStateSelected];
+    [btnchk3 setBackgroundImage:[UIImage imageNamed:@"tickcircle"]
+                       forState:UIControlStateHighlighted];
+    [btnchk3 addTarget:self action:@selector(checkbox3Selected:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [btnchk4 setBackgroundImage:[UIImage imageNamed:@"tickwithoutcircle"]
+                       forState:UIControlStateNormal];
+    [btnchk4 setBackgroundImage:[UIImage imageNamed:@"tickcircle"]
+                       forState:UIControlStateSelected];
+    [btnchk4 setBackgroundImage:[UIImage imageNamed:@"tickcircle"]
+                       forState:UIControlStateHighlighted];
+    [btnchk4 addTarget:self action:@selector(checkbox4Selected:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [btnchk5 setBackgroundImage:[UIImage imageNamed:@"tickwithoutcircle"]
+                       forState:UIControlStateNormal];
+    [btnchk5 setBackgroundImage:[UIImage imageNamed:@"tickcircle"]
+                       forState:UIControlStateSelected];
+    [btnchk5 setBackgroundImage:[UIImage imageNamed:@"tickcircle"]
+                       forState:UIControlStateHighlighted];
+    [btnchk5 addTarget:self action:@selector(checkbox5Selected:) forControlEvents:UIControlEventTouchUpInside];
+
+    
     
     NSMutableArray *arr = [DbHandler Fetchuserdetail:delegate.struserid];
     NSString *thumbprofilepic =[NSString stringWithFormat:@"http://airlogiq-prod.us-east-1.elasticbeanstalk.com/%@",[[arr objectAtIndex:0]valueForKey:@"thumbprofilepic"]];
@@ -108,14 +147,19 @@ int dis;
         if(![commercial isEqualToString:@"Yes"])
             //if([lblins.text isEqualToString:@"0"])
         {
+            scrlview.contentSize=CGSizeMake(self.view.frame.size.width,870);
+            profileview.frame=CGRectMake(0, 0, self.view.frame.size.width,820);
+            [scrlview addSubview:profileview];
+            
             viewsummary.frame=CGRectMake(0,246,self.view.frame.size.width,200);
             lblt.frame=CGRectMake(self.view.frame.size.width-147, 452, 75, 30);
             lbltotalfee.frame=CGRectMake(self.view.frame.size.width-74, 452, 64, 30);
             lblmsg.frame=CGRectMake(34, 488, self.view.frame.size.width-53, 40);
             imgicon.frame=CGRectMake(8, 490, 25, 25);
+            viewterms.frame=CGRectMake(0,490,self.view.frame.size.width,200);
             float X_Co = (self.view.frame.size.width - 218)/2;
-            [btnnext setFrame:CGRectMake(X_Co, 625, 218, 34)];
-            [btncancel setFrame:CGRectMake(X_Co, 665, 218, 34)];
+            [btnnext setFrame:CGRectMake(X_Co, 750, 218, 34)];
+            [btncancel setFrame:CGRectMake(X_Co, 790, 218, 34)];
             //btncancel.frame=CGRectMake(self.view.frame.size.width-51, 585, 218, 34);
             lblpaymenttype.text=@"Mutually";
             imgicon.hidden=YES;
@@ -136,6 +180,10 @@ int dis;
         }
         else
         {
+            scrlview.contentSize=CGSizeMake(self.view.frame.size.width,1000);
+            profileview.frame=CGRectMake(0, 0, self.view.frame.size.width,950);
+            [scrlview addSubview:profileview];
+            
             NSString *strurl= [AppDelegate baseurl];
             NSMutableDictionary *postdata= [[NSMutableDictionary alloc]init];
             strurl= [strurl stringByAppendingString:@"getuserbalance"];
@@ -163,8 +211,8 @@ int dis;
             imgicon.frame=CGRectMake(8, 490, 25, 25);
             viewpromo.frame=CGRectMake(0, 530, self.view.frame.size.width, 55);
             float X_Co = (self.view.frame.size.width - 218)/2;
-            [btnnext setFrame:CGRectMake(X_Co, 625, 218, 34)];
-            [btncancel setFrame:CGRectMake(X_Co, 665, 218, 34)];
+            [btnnext setFrame:CGRectMake(X_Co, 862, 218, 34)];
+            [btncancel setFrame:CGRectMake(X_Co, 902, 218, 34)];
             lbldis.hidden=YES;
             lblddesc.hidden=YES;
             lbldiscount.hidden=YES;
@@ -222,6 +270,8 @@ int dis;
                 lblcurrency.frame=CGRectMake(self.view.frame.size.width-32, 6, 10, 21);
                 lblvprice.frame=CGRectMake(self.view.frame.size.width-23, 3, 15, 35);
             }
+            
+    
             [btnnext setTitle:@"Proceed to Payment" forState:UIControlStateNormal];
             [btnnext addTarget:self action:@selector(onbtnnextclick:) forControlEvents:UIControlEventTouchUpInside];
         }
@@ -248,13 +298,45 @@ int dis;
         [alert show];
         return;
     }
-    
-    
   
 }
 
 -(IBAction)onbtnnextclick:(id)sender
 {
+    if(!checkBox1Selected)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Please Agree to Terms of Services." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles:Nil, nil];
+        [alert show];
+        return;
+    }
+    if(!checkBox2Selected)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Please Agree to Terms of Services." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles:Nil, nil];
+        [alert show];
+        return;
+    }
+    if( !checkBox3Selected )
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Please Agree to Terms of Services." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles:Nil, nil];
+        [alert show];
+        return;
+    }
+
+    if(!checkBox4Selected)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Please Agree to Terms of Services." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles:Nil, nil];
+        [alert show];
+        return;
+    }
+
+    if(!checkBox5Selected)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Please Agree to Terms of Services." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles:Nil, nil];
+        [alert show];
+        return;
+    }
+
+    
     ispaypal=@"Y";
     
     CATransition *transition = [CATransition animation];
@@ -498,11 +580,11 @@ int dis;
             lblmsg.frame=CGRectMake(34, 538, self.view.frame.size.width-53, 40);
             viewpromo.frame=CGRectMake(0, 580, self.view.frame.size.width, 55);
             float X_Co = (self.view.frame.size.width - 218)/2;
-            [btnnext setFrame:CGRectMake(X_Co, 660, 218, 34)];
-            [btncancel setFrame:CGRectMake(X_Co, 700, 218, 34)];
+            [btnnext setFrame:CGRectMake(X_Co, 862, 218, 34)];
+            [btncancel setFrame:CGRectMake(X_Co, 902, 218, 34)];
            
-            scrlview.contentSize=CGSizeMake(self.view.frame.size.width,800);
-            profileview.frame=CGRectMake(0, 0, self.view.frame.size.width,750);
+            scrlview.contentSize=CGSizeMake(self.view.frame.size.width,1000);
+            profileview.frame=CGRectMake(0, 0, self.view.frame.size.width,950);
             [scrlview addSubview:profileview];
             double netamt=0;
             if([isfirst isEqualToString:@"Y"])
@@ -646,6 +728,39 @@ int dis;
 }
 -(IBAction)onbtnitemdetailclick:(id)sender
 {
+    if(!checkBox1Selected)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Please Agree to Terms of Services." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles:Nil, nil];
+        [alert show];
+        return;
+    }
+    if(!checkBox2Selected)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Please Agree to Terms of Services." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles:Nil, nil];
+        [alert show];
+        return;
+    }
+    if( !checkBox3Selected )
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Please Agree to Terms of Services." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles:Nil, nil];
+        [alert show];
+        return;
+    }
+    
+    if(!checkBox4Selected)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Please Agree to Terms of Services." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles:Nil, nil];
+        [alert show];
+        return;
+    }
+    
+    if(!checkBox5Selected)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Please Agree to Terms of Services." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles:Nil, nil];
+        [alert show];
+        return;
+    }
+
     
         NSString *strurl= [AppDelegate baseurl];
         
@@ -745,6 +860,32 @@ int dis;
     [self.navigationController.view.layer addAnimation:transition forKey:nil];
     [self.navigationController pushViewController:itemdt animated:NO];
 }
+-(void)checkbox1Selected:(id)sender
+{
+    checkBox1Selected = !checkBox1Selected;
+    [btnchk1 setSelected:checkBox1Selected];
+}
+-(void)checkbox2Selected:(id)sender
+{
+    checkBox2Selected = !checkBox2Selected;
+    [btnchk2 setSelected:checkBox2Selected];
+}
+-(void)checkbox3Selected:(id)sender
+{
+    checkBox3Selected = !checkBox3Selected;
+    [btnchk3 setSelected:checkBox3Selected];
+}
+-(void)checkbox4Selected:(id)sender
+{
+    checkBox4Selected = !checkBox4Selected;
+    [btnchk4 setSelected:checkBox4Selected];
+}
+-(void)checkbox5Selected:(id)sender
+{
+    checkBox5Selected = !checkBox5Selected;
+    [btnchk5 setSelected:checkBox5Selected];
+}
+
 
 
 /*

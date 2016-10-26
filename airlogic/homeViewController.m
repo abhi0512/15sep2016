@@ -29,7 +29,7 @@
 #import "uploadgovtidvc.h"
 #import "homeemptycell.h"
 #import "rateuser.h"
-
+#import "UIViewController+MJPopupViewController.h"
 
 
 #define LAZY_LOAD_PAGE_SIZE 5
@@ -445,7 +445,7 @@ NSString *iletters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234
             }
             
             
-            BOOL flg = [DbHandler Insertuser:@"" city:@"" country:@"" emailid:delegate. fbemail firstname:delegate.fbfname gender:@"" uid:userid lastname:delegate.fblname phone:[userdata valueForKey:@"phone"] profilepic:@"" state:@"" status:@"" thumbprofilepic:[userdata valueForKey:@"thumbprofilepic"] usertype:@"Sender" zip:@"" push:@"1" sound:@"1" promocode:pcode];
+            BOOL flg = [DbHandler Insertuser:@"" city:@"" country:@"" emailid:delegate. fbemail firstname:delegate.fbfname gender:@"" uid:userid lastname:delegate.fblname phone:[userdata valueForKey:@"phone"] profilepic:@"" state:@"" status:@"" thumbprofilepic:[userdata valueForKey:@"thumbprofilepic"] usertype:@"Sender" zip:@"" push:@"1" sound:@"1" promocode:pcode currency:[userdata valueForKey:@"currency"]];
             
             if(flg)
             {
@@ -509,16 +509,17 @@ NSString *iletters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234
 
 -(void)verifyclick
 {
-    CATransition *transition = [CATransition animation];
-    transition.duration = 0.45;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
-    transition.type = kCATransitionFromRight;
-    [transition setType:kCATransitionPush];
-    transition.subtype = kCATransitionFromRight;
-    transition.delegate = self;
-    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+   
     if([errortype isEqualToString:@"M"])
     {
+        CATransition *transition = [CATransition animation];
+        transition.duration = 0.45;
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+        transition.type = kCATransitionFromRight;
+        [transition setType:kCATransitionPush];
+        transition.subtype = kCATransitionFromRight;
+        transition.delegate = self;
+        [self.navigationController.view.layer addAnimation:transition forKey:nil];
         smsverificationvc *sms = [[smsverificationvc alloc]initWithNibName:@"smsverificationvc" bundle:nil];
         sms.pagefrom=@"H";
         sms.isfirst=@"Y";
@@ -528,17 +529,44 @@ NSString *iletters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234
     }
     if([errortype isEqualToString:@"U"])
     {
+        CATransition *transition = [CATransition animation];
+        transition.duration = 0.45;
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+        transition.type = kCATransitionFromRight;
+        [transition setType:kCATransitionPush];
+        transition.subtype = kCATransitionFromRight;
+        transition.delegate = self;
+        [self.navigationController.view.layer addAnimation:transition forKey:nil];
         uploadgovtidvc *upload = [[uploadgovtidvc alloc]initWithNibName:@"uploadgovtidvc" bundle:nil];
         upload.pagefrom=@"H";
         [self.navigationController pushViewController:upload animated:NO];
+    }
+    if([errortype isEqualToString:@"C"])
+    {
+        currency *cur= [[currency alloc]initWithNibName:@"currency" bundle:nil];
+        cur._delegate=self;
         
+        [self presentPopupViewController:cur animationType:MJPopupViewAnimationFade contentInteraction:MJPopupViewContentInteractionDismissBackgroundOnly];
     }
     if([errortype isEqualToString:@"E"])
     {
+        CATransition *transition = [CATransition animation];
+        transition.duration = 0.45;
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+        transition.type = kCATransitionFromRight;
+        [transition setType:kCATransitionPush];
+        transition.subtype = kCATransitionFromRight;
+        transition.delegate = self;
+        [self.navigationController.view.layer addAnimation:transition forKey:nil];
         profilevc *profile = [[profilevc alloc]initWithNibName:@"profilevc" bundle:nil];
         [self.navigationController pushViewController:profile animated:NO];
         
     }
+}
+
+-(void)currency:(id)controller didFinishEnteringItem:(NSString *)item
+{
+    
 }
 
 #pragma mark- LazyLoad Table View

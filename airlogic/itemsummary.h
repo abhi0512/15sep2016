@@ -14,7 +14,7 @@
 @interface itemsummary : GAITrackedViewController
 {
     IBOutlet UILabel *lblcost, *lblins,*lblappfee, *lblsafetyfee,*lbltotalfee,*lblfrom,*lblto,*lblvol,*lblweight,*lbldate,*lblitemname,*lblpaymenttype,*lbldiscount,*lblt,*lbldis,*lblddesc,*lblzipcode,*lbltozipcode,*lbltodate,*lblvprice,*lblcurrency ,*lblcredit;
-    IBOutlet UIButton *btnnext,*btncancel,*btnapply;
+    IBOutlet UIButton *btnnext,*btncancel,*btnapply ,*btnchk1,*btnchk2,*btnchk3,*btnchk4,*btnchk5;
     IBOutlet UITextField *txtpromocode;
     IBOutlet UIImageView *imgicon;
     MBProgressHUD *progresshud;
@@ -23,10 +23,11 @@
     AppDelegate *delegate;
     NSURLConnection *catconn,*payconn,*promoconn,*connpurchase,*connpoint;
     NSString *ispaypal ,*promocode ,*creditpoint;
-    IBOutlet UIView *profileview ,*viewpromo,*viewsummary;
+    IBOutlet UIView *profileview ,*viewpromo,*viewsummary,*viewterms;
     IBOutlet UIScrollView *scrlview;
     IBOutlet UILabel *lblmsg;
     NSString *paypalamt ,*isfirst;
+    BOOL checkBox1Selected,checkBox2Selected,checkBox3Selected,checkBox4Selected,checkBox5Selected;
 }
 
 @property(nonatomic, strong, readwrite) NSString *environment;
@@ -38,4 +39,7 @@
 -(IBAction)onbtncontinueclick:(id)sender;
 -(IBAction)onbtnnextclick:(id)sender;
 -(IBAction)onbtnapplyclick:(id)sender;
+
+
+
 @end

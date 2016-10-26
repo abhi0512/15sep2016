@@ -576,7 +576,7 @@ static sqlite3 *database = nil;
     return result;
 }
 
-+(BOOL)Insertuser:(NSString *)address city:(NSString *)_city country:(NSString *)_country emailid:(NSString *)_emailid firstname:(NSString *)_firstname gender:(NSString *)_gender uid:(NSString *)_id lastname:(NSString *)_lastname phone:(NSString *)_phone profilepic:(NSString *)_profilepic state:(NSString *)_state status:(NSString *)_status thumbprofilepic:(NSString *)_thumbprofilepic usertype:(NSString *)_usertype zip:(NSString *)_zip push:(NSString *)_push sound:(NSString *)_sound promocode:(NSString *)_promocode
++(BOOL)Insertuser:(NSString *)address city:(NSString *)_city country:(NSString *)_country emailid:(NSString *)_emailid firstname:(NSString *)_firstname gender:(NSString *)_gender uid:(NSString *)_id lastname:(NSString *)_lastname phone:(NSString *)_phone profilepic:(NSString *)_profilepic state:(NSString *)_state status:(NSString *)_status thumbprofilepic:(NSString *)_thumbprofilepic usertype:(NSString *)_usertype zip:(NSString *)_zip push:(NSString *)_push sound:(NSString *)_sound promocode:(NSString *)_promocode currency:(NSString *)_currency
 {
     bool result = NO;
     
@@ -585,7 +585,7 @@ static sqlite3 *database = nil;
         NSString *selectSql;
         sqlite3_stmt *statement1;
         
-        selectSql = [NSString stringWithFormat:@"INSERT INTO usermaster (address,city,country,emailid,firstname,gender,id,lastname,phone,profilepic,state,status,thumbprofilepic,usertype,zip,pushnotification,sound,promocode)values('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",address,_city,_country,_emailid,_firstname,_gender,_id,_lastname,_phone,_profilepic,_state,_status,_thumbprofilepic,_usertype,_zip,_push,_sound,_promocode];
+        selectSql = [NSString stringWithFormat:@"INSERT INTO usermaster (address,city,country,emailid,firstname,gender,id,lastname,phone,profilepic,state,status,thumbprofilepic,usertype,zip,pushnotification,sound,promocode,currency)values('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",address,_city,_country,_emailid,_firstname,_gender,_id,_lastname,_phone,_profilepic,_state,_status,_thumbprofilepic,_usertype,_zip,_push,_sound,_promocode,_currency];
         
         
         if (sqlite3_prepare_v2(database, [selectSql UTF8String], -1, &statement1, NULL) == SQLITE_OK)
