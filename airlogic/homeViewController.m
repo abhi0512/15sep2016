@@ -568,7 +568,12 @@ NSString *iletters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234
 {
     
 }
-
+-(void)dismissPopup
+{
+    currency *cur= [[currency alloc]initWithNibName:@"currency" bundle:nil];
+    [self dismissPopupViewController:cur animationType:MJPopupViewAnimationFade];
+    
+}
 #pragma mark- LazyLoad Table View
 
 - (void)tableView:(UITableView *)tableView lazyLoadNextCursor:(int)cursor{

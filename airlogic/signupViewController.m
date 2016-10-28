@@ -14,7 +14,7 @@
 #import "AbhiHttpPOSTRequest.h"
 #import "DbHandler.h"
 #import "smsverificationvc.h"
-
+#import "invitation.h"
 #import "GAI.h"
 #import "GAIFields.h"
 #import "GAITracker.h"
@@ -221,9 +221,26 @@
     
     if([string isEqualToString:@"200"])
     {
+        NSString *Isinvite = [deserializedData objectForKey:@"Isinvite"];
+        
 
         [self removeProgressIndicator];
         
+        if([Isinvite isEqualToString:@"Y"])
+        {
+            invitation *inv = [[invitation alloc]initWithNibName:@"invitation" bundle:nil];
+            
+            CATransition *transition = [CATransition animation];
+            transition.duration = 0.45;
+            transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+            transition.type = kCATransitionFromRight;
+            [transition setType:kCATransitionPush];
+            transition.subtype = kCATransitionFromRight;
+            [self.navigationController.view.layer addAnimation:transition forKey:nil];
+            [self.navigationController pushViewController:inv animated:NO];
+        }
+        else
+        {
         NSDictionary *userdata = [deserializedData objectForKey:@"data"];
         NSString *userid =[userdata valueForKey:@"lastid"];
         BOOL flg = [DbHandler Insertuser:@"" city:@"" country:@"" emailid:txtemail.text firstname:txtfname.text gender:@"" uid:userid lastname:txtlname.text phone:@"" profilepic:@"" state:@"" status:@"" thumbprofilepic:@"" usertype:@"Sender" zip:@"" push:@"1" sound:@"1" promocode:@"" currency:@""];
@@ -233,6 +250,9 @@
             delegate.struserid=userid;
             delegate.username=[NSString stringWithFormat:@"%@ %@",txtfname.text,txtlname.text];
             delegate.strusertype=@"Sender";
+            
+            
+            //condition set to show invite only page or else same flow on 27 oct.2016
             
             smsverificationvc *sms = [[smsverificationvc alloc]initWithNibName:@"smsverificationvc" bundle:nil];
             sms.isfirst=@"Y";
@@ -245,17 +265,19 @@
         transition.subtype = kCATransitionFromRight;
         [self.navigationController.view.layer addAnimation:transition forKey:nil];
         [self.navigationController pushViewController:sms animated:NO];
-            }
+        }
+        }
     }
-    else
-    {
-        [self removeProgressIndicator];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message: [deserializedData objectForKey:@"response_message"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        return;
-    }
-    
+   
+        else
+        {
+            [self removeProgressIndicator];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message: [deserializedData objectForKey:@"response_message"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            return;
+        }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

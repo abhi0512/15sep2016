@@ -1155,7 +1155,7 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012345
     
     NSMutableDictionary *postdata= [[NSMutableDictionary alloc]init];
     [postdata setObject:txttripname.text forKey:@"tripname"];
-    [postdata setObject:txtdesc.text forKey:@"tripdescription"];
+    [postdata setObject:txtdesc.text forKey:@"tripdesc"];
     
     NSArray *arrtripdate =[tripdt componentsSeparatedByString: @"-"];
     NSString *tripdate=[arrtripdate objectAtIndex:2];

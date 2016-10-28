@@ -23,7 +23,7 @@
     MBProgressHUD *progresshud;
     NSMutableData *responseData;
     AppDelegate *delegate;
-    IBOutlet UILabel *lblusername, *lblcountry,*lblid,*lblbankdetail,*lblcity,*lblpointearn;
+    IBOutlet UILabel *lblusername, *lblcountry,*lblid,*lblbankdetail,*lblcity,*lblpointearn,*lblcurrency;
    SWRevealViewController *revealController;
     IBOutlet UIImageView *imgprofile;
     IBOutlet UIButton *btnflybee, *btnsender ,*btnemail,*btneicon,*btnphone,*btnpicon,*btnlinkedin,*btnlogout;

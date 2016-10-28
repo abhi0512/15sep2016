@@ -21,6 +21,7 @@
 #import "DbHandler.h"
 #import <QuartzCore/QuartzCore.h>
 #import <linkedin-sdk/LISDK.h>
+#import "invitation.h"
 
 
 @interface intialview ()
@@ -187,7 +188,7 @@
     [postdata setObject:delegate.fblname forKey:@"lastname"];
     [postdata setObject:delegate.fbemail forKey:@"email"];
     [postdata setObject:delegate.fbid forKey:@"logintoken"];
-    [postdata setObject:delegate.fbpicture        forKey:@"fbpicture"];
+    [postdata setObject:delegate.fbpicture  forKey:@"fbpicture"];
     [postdata setObject:delegate.devicetoken forKey:@"devicetoken"];
     
     
@@ -232,6 +233,22 @@
         if([string isEqualToString:@"200"])
         {
             [self removeProgressIndicator];
+            NSString *Isinvite = [deserializedData objectForKey:@"isinvite"];
+            if([Isinvite isEqualToString:@"Y"])
+            {
+                invitation *inv = [[invitation alloc]initWithNibName:@"invitation" bundle:nil];
+                
+                CATransition *transition = [CATransition animation];
+                transition.duration = 0.45;
+                transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+                transition.type = kCATransitionFromRight;
+                [transition setType:kCATransitionPush];
+                transition.subtype = kCATransitionFromRight;
+                [self.navigationController.view.layer addAnimation:transition forKey:nil];
+                [self.navigationController pushViewController:inv animated:NO];
+            }
+            else
+            {
             
             NSDictionary *userdata = [deserializedData objectForKey:@"data"];
             NSString *userid =[userdata valueForKey:@"lastid"];
@@ -270,6 +287,7 @@
                 }
             }
             
+        }
         }
         else
         {

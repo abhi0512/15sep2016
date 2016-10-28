@@ -590,7 +590,7 @@
     [postdata setObject:strcntryid forKey:@"country"];
     [postdata setObject:strstateid forKey:@"state"];
     [postdata setObject:strcityid forKey:@"city"];
-    [postdata setObject:txtdesc.text forKey:@"aboutme"];
+    [postdata setObject:txtdesc.text forKey:@"abtme"];
     [postdata setObject:strusertype forKey:@"usermode"];
     [postdata setObject:txtphone.text forKey:@"phoneno"];
     [postdata setObject:txtcode.text forKey:@"cntrycode"];
@@ -602,6 +602,10 @@
     {
         [postdata setObject:@"No" forKey:@"mobileverify"];
     }
+else if(![txtcode.text isEqualToString:phonecode])
+        {
+            [postdata setObject:@"No" forKey:@"mobileverify"];
+        }
     else
     {
         [postdata setObject:mobileverified forKey:@"mobileverify"];
@@ -613,14 +617,7 @@
     }
     if([phonecode length ] > 0)
     {
-        if(![txtcode.text isEqualToString:phonecode])
-        {
-            [postdata setObject:@"No" forKey:@"mobileverify"];
-        }
-        else
-        {
-            [postdata setObject:mobileverified forKey:@"mobileverify"];
-        }
+        
     }
     else
     {

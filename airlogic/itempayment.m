@@ -175,7 +175,7 @@
     [postdata setObject:[[arritem objectAtIndex:0]valueForKey:@"todate"] forKey:@"todate"];
     [postdata setObject:[[arritem objectAtIndex:0]valueForKey:@"catid"] forKey:@"category"];
     [postdata setObject:[[arritem objectAtIndex:0]valueForKey:@"itemname"] forKey:@"itemname"];
-    [postdata setObject:[[arritem objectAtIndex:0]valueForKey:@"itemdesc"] forKey:@"itemdescription"];
+    [postdata setObject:[[arritem objectAtIndex:0]valueForKey:@"itemdesc"] forKey:@"itemdesc"];
     [postdata setObject:[[arritem objectAtIndex:0]valueForKey:@"itemcost"] forKey:@"itemcost"];
     [postdata setObject:delegate.volid forKey:@"volume"];
     [postdata setObject:@"1" forKey:@"cancellationpolicy"];

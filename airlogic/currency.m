@@ -15,6 +15,7 @@
 #import "UIViewController+MJPopupViewController.h"
 #import "homeViewController.h"
 
+
 @interface currency ()
 
 @end
@@ -156,9 +157,10 @@
     if([string isEqualToString:@"200"])
     {
         [self removeProgressIndicator];
-       // [self._delegate mobileaccount:self didFinishEnteringItem:@"done"];
-         // profilevc *vc = [[profilevc alloc]init];
-        //[vc dismissPopup];
+        //[self._delegate cur:self didFinishEnteringItem:@"done"];
+        [self._delegate currency:self didFinishEnteringItem:@"Done"];
+         homeViewController *vc = [[homeViewController alloc]init];
+        [vc dismissPopup];
         
     }
     else

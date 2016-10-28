@@ -132,8 +132,8 @@
         lblbankdetail.frame=CGRectMake(8, 807, 80, 21);
         viewbankdetail.frame=CGRectMake(0, 835, self.view.frame.size.width, 160);
         
-        scrlview.contentSize=CGSizeMake(self.view.frame.size.width, 1200);
-        profileview.frame=CGRectMake(0, 0, self.view.frame.size.width,1150);
+        scrlview.contentSize=CGSizeMake(self.view.frame.size.width, 1250);
+        profileview.frame=CGRectMake(0, 0, self.view.frame.size.width,1200);
         [scrlview addSubview:profileview];
    
     
@@ -386,6 +386,7 @@
         uploadid=[userdetail valueForKey:@"uploadid"];
         govtid=[userdetail valueForKey:@"govtidverified"];
         lblpointearn.text= [NSString stringWithFormat:@"%@ (used)/%@ (total)",[userdetail valueForKey:@"pointredeem"],[userdetail valueForKey:@"pointearn"]];
+        lblcurrency.text=[userdetail valueForKey:@"currency"];
         NSString *thumbprofilepic = [userdetail valueForKey:@"thumbprofilepic"];
         NSString *profilepic = [userdetail valueForKey:@"profilepic"];
          
@@ -740,6 +741,7 @@
     btnemail.userInteractionEnabled=NO;
     btneicon.userInteractionEnabled=NO;
 }
+
 
 -(void)dismissPopup
 {

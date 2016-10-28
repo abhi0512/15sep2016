@@ -31,6 +31,8 @@
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
         </mutableArray>
         <mutableArray key="Roboto-Regular_0.ttf">
             <string>Roboto-Regular</string>
@@ -66,6 +68,7 @@
                 <outlet property="lblbankdetail" destination="byI-hd-O2a" id="N47-k0-iMd"/>
                 <outlet property="lblcity" destination="1Cl-zf-MK8" id="Yjw-7k-Bfi"/>
                 <outlet property="lblcountry" destination="ina-hZ-8uR" id="fQ5-2r-llb"/>
+                <outlet property="lblcurrency" destination="4gF-M2-OkP" id="ehV-Zg-w2F"/>
                 <outlet property="lblpointearn" destination="psa-gM-8pY" id="pVL-T2-9dv"/>
                 <outlet property="lblusername" destination="egR-Gd-J5w" id="MKg-FO-lzC"/>
                 <outlet property="profileview" destination="nOL-Ab-3yc" id="Pay-q8-Te2"/>
@@ -106,7 +109,7 @@
             <point key="canvasLocation" x="172" y="297"/>
         </view>
         <view contentMode="scaleToFill" id="nOL-Ab-3yc">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="1150"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="1200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1UY-ot-BDf">
@@ -582,16 +585,13 @@
                             <state key="normal" backgroundImage="reward.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <connections>
-                                <action selector="onbtnemailverclick:" destination="-1" eventType="touchUpInside" id="aYO-zT-0YH"/>
-                            </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="psa-gM-8pY">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="psa-gM-8pY">
                             <rect key="frame" x="38" y="6" width="274" height="28"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -599,7 +599,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fRr-oN-a0H">
-                    <rect key="frame" x="51" y="1095" width="218" height="34"/>
+                    <rect key="frame" x="51" y="1154" width="218" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
@@ -610,6 +610,38 @@
                         <action selector="onbtnlogoutclick:" destination="-1" eventType="touchUpInside" id="FAO-6t-Iou"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OyQ-e3-dGO">
+                    <rect key="frame" x="8" y="1068" width="80" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" id="VmY-w6-2H0">
+                    <rect key="frame" x="0.0" y="1092" width="320" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="a4B-8F-27R">
+                            <rect key="frame" x="8" y="8" width="25" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <state key="normal" backgroundImage="coin.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4gF-M2-OkP">
+                            <rect key="frame" x="38" y="6" width="274" height="28"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <animations/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -621,6 +653,7 @@
     <resources>
         <image name="background.png" width="320" height="480"/>
         <image name="btnorange" width="218" height="34"/>
+        <image name="coin.png" width="512" height="512"/>
         <image name="emptystar" width="30" height="29"/>
         <image name="icon_camera.png" width="256" height="256"/>
         <image name="icon_email" width="23" height="23"/>

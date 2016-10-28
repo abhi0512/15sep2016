@@ -1375,6 +1375,7 @@ double afee;
     itemid=@"";
     itemuserid=@"";
     isfund=@"";
+    isopened=@"N";
     btnindex=0;
     viewdetail.hidden=YES;
     

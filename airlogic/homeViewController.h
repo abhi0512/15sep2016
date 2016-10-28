@@ -38,7 +38,7 @@
 @property(nonatomic,strong)NSString *fbpicture;
 @property(nonatomic,strong)NSString *logintype;
 -(void)loaddata:(int)pageno;
-
+-(void)dismissPopup;
 -(void)addspinner;
 -(void)removespinner;
 -(IBAction)onbtnadditemclick:(id)sender;
